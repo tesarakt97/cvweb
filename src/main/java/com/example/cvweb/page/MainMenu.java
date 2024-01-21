@@ -1,13 +1,15 @@
 package com.example.cvweb.page;
 
 import io.qameta.allure.Step;
+import org.springframework.stereotype.Component;
 
 import static com.codeborne.selenide.Selenide.open;
 
+@Component
 public class MainMenu extends BasePage {
 
 
-    @Step("Открытие вкладки 'Text Box'")
+    @Step("Открытие главного меню")
     public MainMenu openMainMenu() {
         open("/elements");
         return new MainMenu();
@@ -19,10 +21,9 @@ public class MainMenu extends BasePage {
         return new FormsPage();
     }
 
-    @Step("Открытие вкладки 'Текстовая форма'")
-    public TextBox openTextBoxForm() {
-        open("/automation-practice-form");
-        return new TextBox();
+    @Step("Открытие вкладки 'Text Box'")
+    public TextBoxPage openTextBoxForm() {
+        open("/text-box");
+        return new TextBoxPage();
     }
-
 }

@@ -1,19 +1,16 @@
 package com.example.cvweb.config;
 
-import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.logevents.SelenideLogger;
-import io.qameta.allure.selenide.AllureSelenide;
-import org.springframework.boot.context.properties.ConfigurationProperties;
+import lombok.Getter;
 import org.springframework.stereotype.Service;
 
 @Service
-@ConfigurationProperties(prefix = "sut")
+@Getter
 public class SelenideConfig {
-//    void BaseSelenideConfig(){
-//        SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
-//                .screenshots(TestConfig.SCREENSHOTS)
-//                .savePageSource(TestConfig.SAVE_PAGE_SOURCE));
-//    }
 
-    public String defaultValue;
+
+    // allure-selenide
+    public static final boolean SCREENSHOTS = true;
+    public static final boolean SAVE_PAGE_SOURCE = true;
+    public static final String BROWSER_SIZE = "1900x1000";
+
 }
