@@ -20,6 +20,9 @@ public class Environment {
     @Value("${selenide.browser}")
     public String browser;
 
+    @Value("${selenide.remote}")
+    public boolean isRemote;
+
     @Value("${selenide.headless}")
     public boolean headless;
 
